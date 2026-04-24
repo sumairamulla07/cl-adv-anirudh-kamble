@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* ── Palette ────────────────────────────── */
+    --ink:        38 28% 12%;      /* #1e1a10 warm near-black  */
+    --ink-2:      36 24% 18%;      /* #2c2518 */
+    --ink-3:      35 20% 26%;      /* #3e3422 */
+    --cream:      40 33% 96%;      /* #faf6ee */
+    --cream-2:    40 28% 92%;      /* #f3ead8 */
+    --cream-3:    39 24% 86%;      /* #e8dfc8 */
+    --gold:       38 52% 51%;      /* #b89550 muted warm gold  */
+    --gold-light: 39 52% 63%;      /* #d4af6a */
+    --gold-pale:  40 56% 86%;      /* #f0e4c4 */
+    --muted-fg:   35 18% 48%;      /* #8a7d65 warm taupe       */
+    --rule:       38 52% 51% / 0.18;
+
+    /* ── Semantic aliases ───────────────────── */
+    --background:        var(--cream);
+    --foreground:        var(--ink);
+    --card:              40 0% 100%;
+    --card-foreground:   var(--ink);
+    --muted:             40 22% 93%;
+    --muted-foreground:  var(--muted-fg);
+    --border:            39 22% 86%;
+    --input:             39 22% 86%;
+    --ring:              var(--gold);
+    --radius:            0.25rem;
+
+    /* ── Dark section (ink) ─────────────────── */
+    --section-dark:      38 28% 12%;
+    --section-dark-2:    36 24% 18%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    font-family: 'Jost', sans-serif;
+    font-weight: 300;
+    font-size: 15px;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 400;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer components {
+
+  /* ── Layout ───────────────────────────── */
+  .section-padding {
+    @apply px-5 sm:px-8 lg:px-12 py-16 sm:py-20 lg:py-24;
+  }
+  .container-narrow {
+    @apply max-w-6xl mx-auto;
+  }
+
+  /* ── Dark section ─────────────────────── */
+  .bg-ink {
+    background: hsl(var(--section-dark));
+    color: hsl(var(--cream));
+  }
+  .bg-ink-2 {
+    background: hsl(var(--section-dark-2));
+    color: hsl(var(--cream));
+  }
+
+  /* Alias for existing usage in tsx files */
+  .bg-navy-dark { background: hsl(var(--section-dark)); color: hsl(var(--cream)); }
+  .bg-navy-light { background: hsl(var(--section-dark-2)); }
+  .text-gold { color: hsl(var(--gold)); }
+  .text-gold-light { color: hsl(var(--gold-light)); }
+
+  /* ── Eyebrow label ────────────────────── */
+  .eyebrow {
+    font-family: 'Jost', sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.26em;
+    text-transform: uppercase;
+    color: hsl(var(--gold));
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .eyebrow::after {
+    content: '';
+    flex: 1;
+    max-width: 3rem;
+    height: 1px;
+    background: hsl(var(--gold) / 0.4);
+  }
+
+  /* ── Buttons ──────────────────────────── */
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.8rem 1.9rem;
+    background: hsl(var(--gold));
+    color: hsl(var(--cream));
+    border: 1px solid hsl(var(--gold));
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.22s, color 0.22s, transform 0.18s;
+  }
+  .btn-gold:hover {
+    background: hsl(var(--gold-light));
+    border-color: hsl(var(--gold-light));
+    transform: translateY(-1px);
+  }
+
+  .btn-outline-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-family: 'Jost', sans-serif;
+    font-size: 0.67rem;
+    font-weight: 500;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 0.8rem 1.9rem;
+    background: transparent;
+    color: hsl(var(--gold));
+    border: 1px solid hsl(var(--gold) / 0.5);
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.22s, border-color 0.22s, transform 0.18s;
+  }
+  .btn-outline-gold:hover {
+    background: hsl(var(--gold) / 0.08);
+    border-color: hsl(var(--gold));
+    transform: translateY(-1px);
+  }
+
+  /* ── Cards ────────────────────────────── */
+  .card-elegant {
+    background: hsl(var(--card));
+    border: 1px solid hsl(var(--border));
+    padding: 1.75rem 2rem;
+    transition: box-shadow 0.25s, transform 0.25s, border-color 0.25s;
+  }
+  .card-elegant:hover {
+    box-shadow: 0 8px 32px -8px hsl(var(--gold) / 0.12);
+    border-color: hsl(var(--gold) / 0.35);
+    transform: translateY(-2px);
+  }
+
+  /* Rule line */
+  .rule-gold {
+    display: block;
+    width: 2.5rem;
+    height: 1px;
+    background: hsl(var(--gold));
+    margin-bottom: 1.2rem;
+  }
+}
