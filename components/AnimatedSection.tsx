@@ -1,13 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ElementType, ReactNode } from "react";
+import { CSSProperties, ElementType, ReactNode } from "react";
 
 interface AnimatedSectionProps {
   children: ReactNode;
   className?: string;
   delay?: number;
   as?: ElementType;
+  style?: CSSProperties;     // ✅ ADD THIS
 }
 
 const fadeUp = {

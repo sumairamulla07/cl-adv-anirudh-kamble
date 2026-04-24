@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Jost } from "next/font/google";
+import localFont from 'next/font/local'
+
+
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -8,20 +11,31 @@ import JsonLd from "@/components/JsonLd";
 import { Toaster } from "sonner";
 import MarketingPopup from "@/components/MarketingPopup";
 
-const cormorant = Cormorant_Garamond({
-  subsets: ["latin"],
-  variable: "--font-cormorant",
-  display: "swap",
-  weight: ["300", "400", "600"],
-  style: ["normal", "italic"],
-});
+const cormorant = localFont({
+  src: '../public/fonts/CormorantGaramond-VariableFont_wght.ttf',
+  variable: '--font-cormorant',
+})
 
-const jost = Jost({
-  subsets: ["latin"],
-  variable: "--font-jost",
-  display: "swap",
-  weight: ["300", "400", "500", "600"],
-});
+const jost = localFont({
+  src: '../public/fonts/Jost-VariableFont_wght.ttf',
+  variable: '--font-jost',
+})
+
+
+// const cormorant = Cormorant_Garamond({
+//   subsets: ["latin"],
+//   variable: "--font-cormorant",
+//   display: "swap",
+//   weight: ["300", "400", "600"],
+//   style: ["normal", "italic"],
+// });
+
+// const jost = Jost({
+//   subsets: ["latin"],
+//   variable: "--font-jost",
+//   display: "swap",
+//   weight: ["300", "400", "500", "600"],
+// });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://advanirudhkamble.com"),

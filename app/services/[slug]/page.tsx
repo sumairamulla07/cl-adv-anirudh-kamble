@@ -71,7 +71,7 @@ export default async function ServiceDetailPage({ params }: Props) {
       </section>
 
       {/* Content */}
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12" style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "3rem", alignItems: "start" }} className="max-w-6xl mx-auto px-5 sm:px-8 py-12 max-lg:block">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 max-w-6xl mx-auto px-5 sm:px-8 py-12 max-lg:block" style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "3rem", alignItems: "start" }}>
 
         {/* Left */}
         <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>

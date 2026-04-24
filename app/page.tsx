@@ -69,7 +69,7 @@ export default function HomePage() {
 
       {/* ── STATS BAR ────────────────────── */}
       <div style={{ background: INK3, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
-        <div className="max-w-6xl mx-auto" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }} className="max-sm:grid-cols-2 max-w-6xl mx-auto">
+        <div className="max-w-6xl mx-auto max-sm:grid-cols-2 max-w-6xl mx-auto" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }} >
           {stats.map((s, i) => (
             <div key={s.label} style={{ padding: "1.4rem 1rem", textAlign: "center", borderRight: i < 3 ? `1px solid ${BORDER}` : "none" }} className="max-sm:even:border-r-0">
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2rem", fontWeight: 300, color: GOLD, lineHeight: 1 }}>{s.value}</div>
@@ -81,7 +81,7 @@ export default function HomePage() {
 
       {/* ── ADVOCATE INTRO ───────────────── */}
       <section style={{ background: CREAM, padding: "5rem 0" }}>
-        <div className="max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }} className="max-lg:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 max-lg:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
           {/* Photo */}
           <AnimatedSection style={{ position: "relative" }}>
             <div style={{ position: "relative", maxWidth: 400 }}>
@@ -144,17 +144,17 @@ export default function HomePage() {
       <ServicesGrid />
 
       {/* ── WHY US ───────────────────────── */}
-      <section style={{ background: INK, padding: "5rem 0" }}>
-        <div className="max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }} className="max-md:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8">
+      <section style={{ background: CREAM, padding: "5rem 0" }}>
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 max-md:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
           <AnimatedSection>
             <div className="eyebrow mb-3" style={{ color: GOLD }}>Our Approach</div>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.7rem, 2.5vw, 2.4rem)", fontWeight: 300, color: CREAM, marginBottom: "1rem", lineHeight: 1.15 }}>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.7rem, 2.5vw, 2.4rem)", fontWeight: 300, color: INK, marginBottom: "1rem", lineHeight: 1.15 }}>
               Preventive, Client-Focused Legal Practice
             </h2>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", lineHeight: 1.85, color: MUTED, marginBottom: "1.8rem" }}>
               The practice follows a preventive approach — aimed at avoiding disputes before they arise through meticulous documentation and thorough scrutiny.
             </p>
-            <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: "1rem", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: "hsl(40,28%,80%)", lineHeight: 1.65 }}>
+            <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: "1rem", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: "hsl(41, 27%, 20%)", lineHeight: 1.65 }}>
               "Strong documentation today is the best protection against disputes tomorrow."
               <footer style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.58rem", letterSpacing: "0.12em", textTransform: "uppercase", color: MUTED, marginTop: "0.5rem", fontStyle: "normal" }}>
                 — Advocate Anirudh Kamble
@@ -166,7 +166,7 @@ export default function HomePage() {
               {approach.map((item, i) => (
                 <li key={i} style={{ display: "flex", gap: "0.75rem", padding: "0.85rem 1rem", background: "rgba(255,255,255,0.04)", border: `1px solid rgba(184,149,80,0.1)` }}>
                   <CheckCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
-                  <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.8rem", color: "hsl(40,28%,78%)", lineHeight: 1.7 }}>{item}</span>
+                  <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.8rem", color: "hsl(40, 20%, 15%)", lineHeight: 1.7 }}>{item}</span>
                 </li>
               ))}
             </ul>

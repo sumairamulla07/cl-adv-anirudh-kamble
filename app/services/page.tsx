@@ -78,7 +78,7 @@ export default function ServicesPage() {
 
       {/* Approach */}
       <section style={{ background: INK2, padding: "4rem 0" }}>
-        <div className="max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }} className="max-md:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8">
+        <div className="max-w-6xl mx-auto px-5 sm:px-8 max-md:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "4rem", alignItems: "center" }}>
           <div>
             <div className="eyebrow mb-3" style={{ color: GOLD }}>Our Philosophy</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem, 2.5vw, 2.2rem)", fontWeight: 300, color: CREAM, marginBottom: "0.9rem" }}>
