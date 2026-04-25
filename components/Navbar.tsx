@@ -44,15 +44,15 @@ export default function Navbar() {
             <div>
               <span
                 className="block font-display font-semibold leading-none"
-                style={{ color: "hsl(39,52%,63%)", fontSize: "1.50rem", letterSpacing: "0.01em" }}
+                style={{ color: "hsl(39,52%,63%)", fontSize: "1.05rem", letterSpacing: "0.01em" }}
               >
-                Adv. Anirudh Kamble
+                Advocate Anirudh Kamble
               </span>
               <span
                 className="block font-body font-normal leading-none mt-0.5"
-                style={{ color: "hsl(35,18%,48%)", fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase" }}
+                style={{ color: "hsl(35,18%,48%)", fontSize: "0.52rem", letterSpacing: "0.24em", textTransform: "uppercase" }}
               >
-                Advocate & Notary · Pune
+                Legal Services, Pune
               </span>
             </div>
           </Link>
