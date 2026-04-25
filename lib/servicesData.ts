@@ -6,6 +6,7 @@ export type ServiceDetail = {
   shortDesc: string;
   overview: string;
   quote: string;
+  documentsIntro?: string;
   documents?: { name: string; desc: string }[];
   whatWeDo: string[];
   process: { step: string; title: string; desc: string }[];
@@ -22,6 +23,7 @@ export const services: ServiceDetail[] = [
     shortDesc: "Thorough title search reports and property due diligence — including scrutiny of ownership chain, encumbrance verification, stamp duty guidance, and pre-execution legal opinion to prevent disputes.",
     overview: "A property may appear flawless in location, structure, or market value — yet without a legally sound title, even the most attractive deal can collapse under litigation.\n\nTitle due diligence is the single most critical step before any property investment. It answers the fundamental question: does the seller truly own what they are selling — and can they legally transfer it to you?\n\nWith 24 years of practice in property law, Advocate Anirudh Kamble provides comprehensive title search reports and due diligence that give you complete clarity on a property's legal status before you commit.",
     quote: "Let the buyer beware — but let the buyer also be advised. A clean title confirmed today is the best investment protection tomorrow.",
+    documentsIntro: "A thorough title search is the most critical step before any property transaction. Every report we prepare is specific to the property in question — examining the full ownership chain, encumbrances, and legal status so you can proceed with complete confidence.",
     whatWeDo: [
       "Title chain examination for minimum 30 years",
       "Encumbrance Certificate analysis and interpretation",
@@ -54,6 +56,7 @@ export const services: ServiceDetail[] = [
     shortDesc: "Agreement to Sale, Sale Deed, Gift Deed, Lease Deed, Leave & License Agreements, Power of Attorney, Apartment Deed — all drafted with legal precision and registered before the Sub-Registrar Office.",
     overview: "Property documentation is the legal backbone of any real estate transaction. Whether you are purchasing a flat in a housing society, gifting a plot to a family member, or entering into a leave and license arrangement for a commercial space, the documents that govern these transactions must be drafted with absolute legal precision.\n\nIn Maharashtra, property documents must comply with the Registration Act, 1908, the Maharashtra Stamp Act, and various state-specific regulations. A document that is improperly drafted — even by a small margin — can result in disputes, financial loss, or challenges to your ownership years after the transaction is complete.\n\nWith over 24 years of dedicated practice, Advocate Anirudh Kamble offers comprehensive, end-to-end legal assistance covering the preparation, vetting, and registration of all property documents before the Sub-Registrar Office in Pune and Pimpri Chinchwad.",
     quote: "In property law, the strength of your documentation is the strength of your ownership. We ensure yours is unassailable.",
+    documentsIntro: "Every property transaction and personal asset decision carries long-term consequences. We ensure each document is carefully drafted, legally compliant, and tailored to your exact situation — so you avoid disputes, delays, and costly mistakes later. Our approach is simple: clarity today, security for the future.",
     documents: [
       { name: "Agreement to Sale", desc: "The foundational document in any property purchase. Records the terms agreed upon between buyer and seller — including the sale consideration, possession timeline, and conditions precedent. Protects the buyer's advance payment and clearly defines the path to the final Sale Deed." },
       { name: "Sale Deed", desc: "The primary document by which ownership of immovable property is legally transferred from seller to buyer. Must be compulsorily registered and supported by accurate stamp duty calculations. We ensure the Sale Deed correctly reflects the title, consideration, boundary details, and all encumbrance clearances." },
@@ -100,6 +103,7 @@ export const services: ServiceDetail[] = [
     shortDesc: "Professionally drafted contracts for individuals, businesses, and developers. MOU, Deed of Assignment, and tailored commercial agreements ensuring enforceability and protection of interests.",
     overview: "A contract is only as strong as the words it contains. Vague language, missing clauses, or legally unenforceable terms can turn a routine business arrangement into a costly dispute.\n\nWith over 24 years of legal practice, Advocate Anirudh Kamble provides meticulous contract drafting and MOU preparation — ensuring your agreements are precise, compliant with applicable law, and enforceable in court. We draft contracts for individuals, businesses, developers, and institutions across a wide range of commercial and property-related transactions.",
     quote: "A contract drafted with care is a dispute prevented. Every clause we write is a safeguard we build into your business relationship.",
+    documentsIntro: "Every document is carefully structured around your specific transaction, relationship dynamics, and legal objectives. We focus on clarity, enforceability, and risk mitigation so that your interests remain fully protected at every stage.",
     documents: [
       { name: "Development Agreement", desc: "Governs the relationship between a landowner and a developer for construction of a residential or commercial project. Defines development rights, sharing of built-up area or sale proceeds, obligations, timelines, and dispute resolution mechanisms." },
       { name: "Joint Venture Agreement", desc: "Joint ventures for property development or business collaborations require agreements that clearly define capital contribution, profit sharing, decision-making authority, exit mechanisms, and liability." },
@@ -143,6 +147,7 @@ export const services: ServiceDetail[] = [
     shortDesc: "End-to-end assistance with property transfer matters under PCNTDA and PMRDA jurisdictions — ensuring compliance with the specific regulatory requirements of each authority.",
     overview: "Properties within the Pimpri Chinchwad New Town Development Authority (PCNTDA) and Pune Metropolitan Region Development Authority (PMRDA) areas are subject to specific regulatory frameworks that differ from standard municipal property transfers.\n\nThese jurisdictions have their own processes for approval of transfers, NOC requirements, stamp duty implications, and compliance requirements — and errors in navigating them can result in significant delays or rejected transactions.\n\nWith 24 years of practice serving clients in Pimpri Chinchwad and the wider PMRDA region, Advocate Anirudh Kamble provides expert guidance through every step of the transfer process.",
     quote: "Navigating PCNTDA and PMRDA transfers requires jurisdiction-specific expertise. We ensure your transaction proceeds smoothly and in full compliance.",
+    documentsIntro: "Transfer matters under PCNTDA and PMRDA require jurisdiction-specific documentation prepared in strict compliance with each authority's rules. Every document we handle for you is tailored to the specific regulatory requirements of your property's jurisdiction.",
     whatWeDo: [
       "PCNTDA property transfer documentation and NOC assistance",
       "PMRDA jurisdiction property transfer guidance",
@@ -176,6 +181,7 @@ export const services: ServiceDetail[] = [
     shortDesc: "Expert handling of deemed conveyance proceedings for housing societies — ensuring clear and legally sound transfer of land and building rights from developers to cooperative housing societies.",
     overview: "Thousands of cooperative housing societies in Pune and Pimpri Chinchwad have not received the conveyance of their land and building from the original developer — meaning the society does not legally own the plot on which its building stands.\n\nUnder the Maharashtra Cooperative Societies Act and the Maharashtra Ownership of Flats Act (MOFA), housing societies can apply to the Competent Authority (District Deputy Registrar) for Deemed Conveyance — obtaining legal title even without the developer's cooperation.\n\nThis is a complex, multi-stage legal process that requires precise documentation, knowledge of the applicable procedure, and effective liaison with the Competent Authority. Advocate Anirudh Kamble has extensive experience guiding housing societies through this process from start to finish.",
     quote: "Every housing society deserves legal title to the land it stands on. We ensure your society secures that right.",
+    documentsIntro: "Deemed Conveyance involves a precise sequence of legal documents — each one critical to securing the society's title. We prepare every document with meticulous attention to the procedural requirements of the Competent Authority.",
     whatWeDo: [
       "Assessment of society's eligibility for Deemed Conveyance",
       "Preparation and filing of application to Competent Authority",
@@ -211,6 +217,7 @@ export const services: ServiceDetail[] = [
     shortDesc: "Legal representation and advisory in property and contractual disputes before courts. Continuity of legal support from documentation to dispute resolution, safeguarding client interests at every stage.",
     overview: "Property and contract disputes can arise even from well-documented transactions — and when they do, you need a legal representative who combines deep documentation expertise with effective courtroom strategy.\n\nAdvocate Anirudh Kamble provides focused legal representation in property title disputes, breach of contract suits, specific performance actions, injunctions, and landlord-tenant matters before courts and tribunals in Pune and Pimpri Chinchwad.\n\nOur preventive-first practice means we have often prepared the very documentation at the heart of a dispute — giving us unique insight into the factual and legal position from the outset.",
     quote: "Strong documentation today is the best protection against disputes tomorrow. But when disputes arise, we are prepared to defend your position at every stage.",
+    documentsIntro: "Every litigation matter is unique — shaped by its specific facts, documents, and legal history. We approach each case with a fresh assessment, building our strategy around your specific position and the relief you seek to obtain.",
     whatWeDo: [
       "Legal representation in property title disputes",
       "Specific performance suits for Agreement to Sale",
@@ -235,7 +242,7 @@ export const services: ServiceDetail[] = [
       "Witness details and contact information",
       "Any valuation reports or expert assessments",
     ],
-  }
+  },
 ];
 
 export const serviceGroups = [
