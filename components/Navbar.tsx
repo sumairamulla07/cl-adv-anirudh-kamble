@@ -46,13 +46,13 @@ export default function Navbar() {
                 className="block font-display font-semibold leading-none"
                 style={{ color: "hsl(39,52%,63%)", fontSize: "1.05rem", letterSpacing: "0.01em" }}
               >
-                Advocate Anirudh Kamble
+                Anirudh Kamble
               </span>
               <span
                 className="block font-body font-normal leading-none mt-0.5"
                 style={{ color: "hsl(35,18%,48%)", fontSize: "0.52rem", letterSpacing: "0.24em", textTransform: "uppercase" }}
               >
-                Legal Services, Pune
+                Advocate And Legal Consultant, Pune
               </span>
             </div>
           </Link>
