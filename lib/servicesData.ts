@@ -45,9 +45,7 @@ export const services: ServiceDetail[] = [
       "Prior sale deeds and agreements (as many as available)",
       "Encumbrance Certificate (we obtain this independently)",
     ],
-  },
-];
-
+  },,
   {
     slug: "property-documentation-registration",
     title: "Property Documentation & Registration",
@@ -93,7 +91,7 @@ export const services: ServiceDetail[] = [
       "RERA registration details (for under-construction projects)",
       "TDS receipt (Form 26QB) if property value > ₹50 lakhs",
     ],
-  },
+  },,
   {
     slug: "contract-commercial-drafting",
     title: "Contract & Commercial Drafting",
@@ -136,7 +134,7 @@ export const services: ServiceDetail[] = [
       "Relevant property documents (for property-related contracts)",
       "Any existing agreements being novated or amended",
     ],
-  },
+  },,
   {
     slug: "pcntda-pmrda-transfers",
     title: "PCNTDA & PMRDA Transfers",
@@ -169,7 +167,7 @@ export const services: ServiceDetail[] = [
       "Property tax receipts",
       "Encumbrance Certificate",
     ],
-  },
+  },,
   {
     slug: "deemed-conveyance",
     title: "Deemed Conveyance",
@@ -204,7 +202,7 @@ export const services: ServiceDetail[] = [
       "Society's share certificates",
       "Correspondence with the developer regarding conveyance",
     ],
-  },
+  },,
   {
     slug: "litigation-support",
     title: "Property & Contract Litigation",
@@ -237,7 +235,8 @@ export const services: ServiceDetail[] = [
       "Witness details and contact information",
       "Any valuation reports or expert assessments",
     ],
-  }
+  },
+];
 
 export const serviceGroups = [
   {
