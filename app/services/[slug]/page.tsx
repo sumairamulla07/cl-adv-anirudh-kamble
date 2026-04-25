@@ -110,7 +110,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 Documents & Services We Handle
               </h2>
               <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.78rem", color: MUTED, marginBottom: "1.5rem" }}>
-                Each document is individually prepared to reflect your specific transaction, relationship, and legal requirements.
+                {service.documentsIntro || "Each document is individually prepared to reflect your specific transaction, relationship, and legal requirements."}
               </p>
               <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
                 {service.documents.map((doc, i) => (
