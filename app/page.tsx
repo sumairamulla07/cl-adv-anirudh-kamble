@@ -13,9 +13,9 @@ export const metadata: Metadata = {
   alternates: { canonical: "https://advanirudhkamble.com" },
 };
 
-const INK  = "hsl(38,28%,12%)";
-const INK2 = "hsl(36,24%,18%)";
-const INK3 = "hsl(35,20%,26%)";
+const INK    = "hsl(38,28%,12%)";
+const INK2   = "hsl(36,24%,18%)";
+const INK3   = "hsl(35,20%,26%)";
 const CREAM  = "hsl(40,33%,96%)";
 const CREAM2 = "hsl(40,28%,92%)";
 const GOLD   = "hsl(38,52%,51%)";
@@ -29,26 +29,22 @@ const stats = [
   { value: "4",   label: "Academic Qualifications" },
 ];
 
-const expertise = [
+const coreAreas = [
   {
-    label: "Property Documentation",
-    pct: "70%",
-    desc: "Agreement to Sale, Sale Deed, Gift Deed, Lease Deed, Deemed Conveyance, Title Search — the core of the practice.",
+    label: "Property Documentation & Title Work",
+    desc: "Preparation and structuring of Agreement to Sale, Sale Deed, Gift Deed, Lease Deed, Deemed Conveyance, along with detailed title analysis and verification. The work is centred on accuracy, legal compliance, and long-term enforceability of rights.",
   },
   {
-    label: "Commercial Contracts",
-    pct: "20%",
-    desc: "Development agreements, joint ventures, MOU, NDA, service contracts, and all commercial documentation.",
+    label: "Commercial Contracts & Builder Agreements",
+    desc: "Drafting and review of development agreements, builder-buyer agreements, joint ventures, MOUs, NDAs, service agreements, and other commercial contracts. Emphasis is placed on clear allocation of rights and obligations, and reducing contractual ambiguity.",
   },
   {
-    label: "Notary & Consultation",
-    pct: "10%",
-    desc: "Notarial services, legal opinions, and pre-transaction consultations.",
+    label: "Consultation & Transaction Advisory",
+    desc: "Legal opinions and pre-transaction advisory, including assessment of title, documentation, and transaction structure, with the objective of identifying and addressing potential issues at an early stage.",
   },
   {
     label: "Litigation Support",
-    pct: "",
-    desc: "Property title disputes, breach of contract, specific performance, and landlord-tenant matters.",
+    desc: "Assistance in matters relating to property title disputes, breach of contract, and specific performance, particularly where detailed examination of title and documentation is involved.",
   },
 ];
 
@@ -69,9 +65,16 @@ export default function HomePage() {
 
       {/* ── STATS BAR ────────────────────── */}
       <div style={{ background: INK3, borderTop: `1px solid ${BORDER}`, borderBottom: `1px solid ${BORDER}` }}>
-        <div className="max-w-6xl mx-auto max-sm:grid-cols-2 max-w-6xl mx-auto" style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }} >
+        <div
+          className="max-w-6xl mx-auto max-sm:grid-cols-2"
+          style={{ display: "grid", gridTemplateColumns: "repeat(4,1fr)" }}
+        >
           {stats.map((s, i) => (
-            <div key={s.label} style={{ padding: "1.4rem 1rem", textAlign: "center", borderRight: i < 3 ? `1px solid ${BORDER}` : "none" }} className="max-sm:even:border-r-0">
+            <div
+              key={s.label}
+              style={{ padding: "1.4rem 1rem", textAlign: "center", borderRight: i < 3 ? `1px solid ${BORDER}` : "none" }}
+              className="max-sm:even:border-r-0"
+            >
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "2rem", fontWeight: 300, color: GOLD, lineHeight: 1 }}>{s.value}</div>
               <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.55rem", letterSpacing: "0.17em", textTransform: "uppercase", color: MUTED, marginTop: "0.3rem" }}>{s.label}</div>
             </div>
@@ -81,7 +84,10 @@ export default function HomePage() {
 
       {/* ── ADVOCATE INTRO ───────────────── */}
       <section style={{ background: CREAM, padding: "5rem 0" }}>
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 max-lg:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+        <div
+          className="max-w-6xl mx-auto px-5 sm:px-8 max-lg:grid-cols-1"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "start" }}
+        >
           {/* Photo */}
           <AnimatedSection style={{ position: "relative" }}>
             <div style={{ position: "relative", maxWidth: 400 }}>
@@ -107,28 +113,50 @@ export default function HomePage() {
             </div>
           </AnimatedSection>
 
-          {/* Bio */}
+          {/* Bio + Core Areas */}
           <AnimatedSection delay={0.15}>
             <div className="eyebrow mb-3">Advocate & Notary · Since 2001</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.8rem, 2.8vw, 2.6rem)", fontWeight: 300, color: INK, lineHeight: 1.1, marginBottom: "1.2rem" }}>
               Trusted Legal Expertise<br />in Property Law
             </h2>
             <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.83rem", lineHeight: 1.9, color: "hsl(38,28%,32%)", marginBottom: "0.9rem" }}>
-              With over 24 years of dedicated legal practice, Advocate Anirudh Kamble provides reliable, precise, and result-oriented legal services in property documentation and registration across Pune and Pimpri Chinchwad.
+              With over 24 years of legal practice, we are engaged in property and commercial transaction work in Pune and Pimpri Chinchwad, including title analysis, documentation, and contract structuring, with a consistent focus on clarity and risk management.
             </p>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.83rem", lineHeight: 1.9, color: "hsl(38,28%,32%)", marginBottom: "1.8rem" }}>
-              Backed by a strong academic foundation — B.A. (Economics) from Nowrosjee Wadia College and LL.B., D.T.L., D.H.L. from Symbiosis Law College and IALS, Pune — the practice combines legal knowledge with real-world insight.
+            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.83rem", lineHeight: 1.9, color: "hsl(38,28%,32%)", marginBottom: "2rem" }}>
+              Supported by an academic background in Economics and Law — B.A. (Economics) from Nowrosjee Wadia College and LL.B., D.T.L., D.H.L. from Symbiosis Law College and IALS, Pune — the practice reflects a disciplined approach grounded in both legal principles and practical application.
             </p>
 
-            {/* Expertise split */}
-            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1px", background: BORDER, marginBottom: "2rem" }}>
-              {expertise.map((e) => (
-                <div key={e.label} style={{ background: CREAM, padding: "1rem 1.1rem" }}>
-                  <div style={{ display: "flex", alignItems: "baseline", gap: "0.4rem", marginBottom: "0.3rem" }}>
-                    {e.pct && <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.3rem", color: GOLD, lineHeight: 1 }}>{e.pct}</span>}
-                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: INK, fontWeight: 500 }}>{e.label}</span>
+            {/* Core Areas of Work */}
+            <div style={{ marginBottom: "0.6rem", display: "flex", alignItems: "center", gap: "0.6rem" }}>
+              <span style={{ display: "block", width: "1.5rem", height: "1px", background: GOLD }} />
+              <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.55rem", letterSpacing: "0.22em", textTransform: "uppercase", color: GOLD }}>
+                Core Areas of Work
+              </span>
+            </div>
+
+            <div style={{ display: "flex", flexDirection: "column", gap: "0", marginBottom: "2rem", border: `1px solid ${BORDER}` }}>
+              {coreAreas.map((area, i) => (
+                <div
+                  key={i}
+                  style={{
+                    padding: "1rem 1.2rem",
+                    borderBottom: i < coreAreas.length - 1 ? `1px solid ${BORDER}` : "none",
+                    background: i % 2 === 0 ? "#fff" : CREAM,
+                  }}
+                >
+                  <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "0.78rem", color: GOLD, fontWeight: 600, flexShrink: 0, marginTop: "1px", minWidth: "1.4rem" }}>
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <div>
+                      <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.06em", textTransform: "uppercase", color: INK, marginBottom: "0.3rem" }}>
+                        {area.label}
+                      </div>
+                      <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.73rem", color: MUTED, lineHeight: 1.75 }}>
+                        {area.desc}
+                      </div>
+                    </div>
                   </div>
-                  <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.7rem", color: MUTED, lineHeight: 1.65 }}>{e.desc}</p>
                 </div>
               ))}
             </div>
@@ -140,12 +168,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ── SERVICES ─────────────────────── */}
+      {/* ── INTEGRATED LEGAL SERVICES BANNER ─────────────────────────────── */}
+      <div style={{ background: INK2, borderTop: `1px solid rgba(184,149,80,0.12)`, borderBottom: `1px solid rgba(184,149,80,0.12)` }}>
+        <div className="max-w-6xl mx-auto px-5 sm:px-8" style={{ padding: "2.2rem 0", display: "flex", alignItems: "center", gap: "1.5rem", flexWrap: "wrap" }}>
+          <span style={{ display: "block", width: "2rem", height: "1px", background: GOLD, flexShrink: 0 }} />
+          <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.78rem", color: "hsl(40,28%,72%)", lineHeight: 1.85, maxWidth: 820 }}>
+            <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1rem", fontStyle: "italic", color: "hsl(40,28%,85%)", marginRight: "0.5rem" }}>
+              Integrated Legal Services —
+            </span>
+            Providing end-to-end legal support across property transactions, the practice includes documentation and registration, title due diligence, commercial contract structuring, and litigation support, with a consistent emphasis on precision, compliance, and risk minimisation.
+          </p>
+        </div>
+      </div>
+
+      {/* ── SERVICES GRID ────────────────── */}
       <ServicesGrid />
 
       {/* ── WHY US ───────────────────────── */}
       <section style={{ background: CREAM, padding: "5rem 0" }}>
-        <div className="max-w-6xl mx-auto px-5 sm:px-8 max-md:grid-cols-1 max-w-6xl mx-auto px-5 sm:px-8" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}>
+        <div
+          className="max-w-6xl mx-auto px-5 sm:px-8 max-md:grid-cols-1"
+          style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "5rem", alignItems: "center" }}
+        >
           <AnimatedSection>
             <div className="eyebrow mb-3" style={{ color: GOLD }}>Our Approach</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.7rem, 2.5vw, 2.4rem)", fontWeight: 300, color: INK, marginBottom: "1rem", lineHeight: 1.15 }}>
@@ -155,7 +199,7 @@ export default function HomePage() {
               The practice follows a preventive approach — aimed at avoiding disputes before they arise through meticulous documentation and thorough scrutiny.
             </p>
             <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: "1rem", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: "hsl(41, 27%, 20%)", lineHeight: 1.65 }}>
-              "Strong documentation today is the best protection against disputes tomorrow."
+              &ldquo;Strong documentation today is the best protection against disputes tomorrow.&rdquo;
               <footer style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.58rem", letterSpacing: "0.12em", textTransform: "uppercase", color: MUTED, marginTop: "0.5rem", fontStyle: "normal" }}>
                 — Advocate Anirudh Kamble
               </footer>
@@ -197,6 +241,7 @@ export default function HomePage() {
           </AnimatedSection>
         </div>
       </section>
+
     </div>
   );
 }
