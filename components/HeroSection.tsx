@@ -1,14 +1,19 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-const fadeUp = {
+const fadeUp: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number) => ({
-    opacity: 1, y: 0,
-    transition: { delay: i * 0.12, duration: 0.7, ease: [0.22, 1, 0.36, 1] },
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.12,
+      duration: 0.7,
+      ease: "easeOut",
+    },
   }),
 };
 
@@ -22,29 +27,51 @@ const badges = [
   "Deemed Conveyance",
 ];
 
-const INK  = "hsl(38,28%,12%)";
-const GOLD = "hsl(38,52%,51%)";
-const MUTED = "hsl(35,18%,48%)";
-
 export default function HeroSection() {
   return (
-    <section style={{ minHeight: "100vh", background: INK, paddingTop: "64px", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 w-full" style={{ paddingTop: "3.5rem", paddingBottom: "4rem" }}>
+    <section
+      style={{
+        minHeight: "100vh",
+        background: "hsl(38,28%,12%)",
+        paddingTop: "64px",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+      }}
+    >
+      <div
+        className="max-w-6xl mx-auto px-5 sm:px-8 w-full"
+        style={{ paddingTop: "3.5rem", paddingBottom: "4rem" }}
+      >
 
         {/* Eyebrow */}
         <motion.div
-          variants={fadeUp} initial="hidden" animate="visible" custom={0}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={0}
           style={{ display: "flex", alignItems: "center", gap: "0.9rem", marginBottom: "2rem" }}
         >
-          <span style={{ display: "block", width: "3.5rem", height: "1px", background: GOLD }} />
-          <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.6rem", letterSpacing: "0.28em", textTransform: "uppercase", color: GOLD }}>
+          <span style={{ display: "block", width: "3.5rem", height: "1px", background: "hsl(38,52%,51%)" }} />
+          <span
+            style={{
+              fontFamily: "'Jost', sans-serif",
+              fontSize: "0.6rem",
+              letterSpacing: "0.28em",
+              textTransform: "uppercase",
+              color: "hsl(38,52%,51%)",
+            }}
+          >
             Trusted Legal Expertise Since 2001
           </span>
         </motion.div>
 
         {/* Main heading */}
         <motion.h1
-          variants={fadeUp} initial="hidden" animate="visible" custom={1}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={1}
           style={{
             fontFamily: "'Cormorant Garamond', serif",
             fontSize: "clamp(3rem, 7vw, 6.5rem)",
@@ -55,20 +82,29 @@ export default function HeroSection() {
             letterSpacing: "-0.01em",
           }}
         >
-          Property Law &amp; <br />
-          <em style={{ fontStyle: "italic", color: GOLD }}>Legal Documentation</em>
+          Property Law &amp;{" "}
+          <br />
+          <em style={{ fontStyle: "italic", color: "hsl(38,52%,51%)" }}>
+            Legal Documentation
+          </em>
           <br />
           You Can Rely On
         </motion.h1>
 
         {/* Subtext */}
         <motion.p
-          variants={fadeUp} initial="hidden" animate="visible" custom={2}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={2}
           style={{
             fontFamily: "'Jost', sans-serif",
-            fontSize: "0.88rem", fontWeight: 300,
-            lineHeight: 1.9, color: MUTED,
-            maxWidth: 480, marginBottom: "2.8rem",
+            fontSize: "0.88rem",
+            fontWeight: 300,
+            lineHeight: 1.9,
+            color: "hsl(35,18%,48%)",
+            maxWidth: 480,
+            marginBottom: "2.8rem",
           }}
         >
           Over 24 years of dedicated practice in property documentation, registration,
@@ -78,7 +114,10 @@ export default function HeroSection() {
 
         {/* Badge pills */}
         <motion.div
-          variants={fadeUp} initial="hidden" animate="visible" custom={3}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={3}
           style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem", marginBottom: "3rem" }}
         >
           {badges.map((b) => (
@@ -86,7 +125,9 @@ export default function HeroSection() {
               key={b}
               style={{
                 fontFamily: "'Jost', sans-serif",
-                fontSize: "0.58rem", letterSpacing: "0.16em", textTransform: "uppercase",
+                fontSize: "0.58rem",
+                letterSpacing: "0.16em",
+                textTransform: "uppercase",
                 padding: "0.4rem 0.9rem",
                 border: "1px solid rgba(184,149,80,0.3)",
                 color: "hsl(40,56%,82%)",
@@ -100,33 +141,27 @@ export default function HeroSection() {
 
         {/* CTAs */}
         <motion.div
-          variants={fadeUp} initial="hidden" animate="visible" custom={4}
+          variants={fadeUp}
+          initial="hidden"
+          animate="visible"
+          custom={4}
           style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "1rem" }}
         >
-          <Link
-            href="/contact"
-            style={{
-              display: "inline-flex", alignItems: "center", gap: "0.5rem",
-              fontFamily: "'Jost', sans-serif",
-              fontSize: "0.63rem", letterSpacing: "0.18em", textTransform: "uppercase",
-              padding: "0.9rem 2rem",
-              background: GOLD,
-              color: "hsl(40,33%,96%)",
-              textDecoration: "none",
-              border: `1px solid ${GOLD}`,
-              transition: "background 0.22s",
-            }}
-          >
+          <Link href="/contact" className="btn-gold">
             Schedule a Consultation
           </Link>
           <Link
             href="/services"
             style={{
-              display: "inline-flex", alignItems: "center", gap: "0.5rem",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.5rem",
               fontFamily: "'Jost', sans-serif",
-              fontSize: "0.63rem", letterSpacing: "0.18em", textTransform: "uppercase",
-              color: MUTED, textDecoration: "none",
-              transition: "color 0.2s",
+              fontSize: "0.63rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "hsl(35,18%,48%)",
+              textDecoration: "none",
             }}
           >
             View Services <ArrowRight style={{ width: 14, height: 14 }} />
