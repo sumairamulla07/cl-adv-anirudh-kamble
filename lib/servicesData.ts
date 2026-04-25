@@ -70,8 +70,6 @@ export const services: ServiceDetail[] = [
       { name: "Will Drafting (Last Will & Testament)", desc: "One of the most important yet often overlooked legal documents. A properly drafted Will ensures that your assets are distributed exactly as per your wishes, without confusion, delay, or family disputes. We create clear, legally valid, and well-structured Wills, tailored to your family situation and asset profile—covering property, bank assets, nominations, and guardianship (where applicable)." },
     ],
     whatWeDo: [
-    ],
-    whatWeDo: [
       "Drafting and vetting of all property documents",
       "Accurate stamp duty calculation and payment guidance",
       "Title search and encumbrance verification",
