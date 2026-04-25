@@ -13,7 +13,7 @@ export type ServiceDetail = {
   docsRequired: string[];
 };
 
-export const services = [
+export const services: ServiceDetail[] = ([
   {
     slug: "title-search-due-diligence",
     title: "Title Search & Due Diligence",
@@ -236,7 +236,7 @@ export const services = [
       "Any valuation reports or expert assessments",
     ],
   },
-];
+] as ServiceDetail[]);
 
 export const serviceGroups = [
   {
