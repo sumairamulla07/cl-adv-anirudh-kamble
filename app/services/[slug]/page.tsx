@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Clock, FileText, Phone, CheckCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, Clock, FileText, Phone, CheckCircle, AlertCircle } from "lucide-react";
 import { services } from "@/lib/servicesData";
 import ServiceBackBar from "@/components/ServiceBackBar";
 import ServiceOtherLinks from "@/components/ServiceOtherLinks";
@@ -23,11 +23,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-const INK = "hsl(38,28%,12%)";
-const INK2 = "hsl(36,24%,18%)";
+const INK   = "hsl(38,28%,12%)";
+const INK2  = "hsl(36,24%,18%)";
 const CREAM = "hsl(40,33%,96%)";
 const CREAM2 = "hsl(40,28%,92%)";
-const GOLD = "hsl(38,52%,51%)";
+const GOLD  = "hsl(38,52%,51%)";
 const MUTED = "hsl(35,18%,48%)";
 const BORDER = "rgba(184,149,80,0.18)";
 
@@ -36,12 +36,16 @@ export default async function ServiceDetailPage({ params }: Props) {
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
 
+  // Determine if this service uses grouped docs or flat list
+  const hasGroupedDocs = service.docsGroups && service.docsGroups.length > 0;
+  const hasFlatDocs    = service.docsRequired && service.docsRequired.length > 0;
+
   return (
     <div style={{ background: CREAM, minHeight: "100vh" }}>
 
       <ServiceBackBar title={service.title} />
 
-      {/* Hero */}
+      {/* ── HERO ─────────────────────────────────────────────────────────── */}
       <section style={{ background: INK, padding: "4rem 0 3.5rem" }}>
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div style={{ fontSize: "2.5rem", marginBottom: "1.2rem" }}>{service.icon}</div>
@@ -70,10 +74,13 @@ export default async function ServiceDetailPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Content */}
-      <div className="max-w-6xl mx-auto px-5 sm:px-8 py-12 max-w-6xl mx-auto px-5 sm:px-8 py-12 max-lg:block" style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "3rem", alignItems: "start" }}>
+      {/* ── MAIN CONTENT ─────────────────────────────────────────────────── */}
+      <div
+        className="max-w-6xl mx-auto px-5 sm:px-8 py-12 max-lg:block"
+        style={{ display: "grid", gridTemplateColumns: "1fr 320px", gap: "3rem", alignItems: "start" }}
+      >
 
-        {/* Left */}
+        {/* ── LEFT COLUMN ──────────────────────────────────────────────── */}
         <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
 
           {/* Overview */}
@@ -95,14 +102,32 @@ export default async function ServiceDetailPage({ params }: Props) {
               fontSize: "1.1rem", fontStyle: "italic",
               color: INK2, lineHeight: 1.6,
             }}>
-              "{service.quote}"
+              &ldquo;{service.quote}&rdquo;
               <footer style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.6rem", letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, marginTop: "0.6rem", fontStyle: "normal" }}>
                 — Advocate Anirudh Kamble · 24 Years of Practice
               </footer>
             </blockquote>
           </section>
 
-          {/* Documents we handle */}
+          {/* Rich sections (Title Search style: Scope / Risk / Deliverables) */}
+          {service.sections && service.sections.map((sec, si) => (
+            <section key={si}>
+              <div style={{ width: "2rem", height: "1px", background: GOLD, marginBottom: "1.2rem" }} />
+              <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: INK, marginBottom: "1.2rem" }}>
+                {sec.heading}
+              </h2>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
+                {sec.items.map((item, ii) => (
+                  <li key={ii} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <CheckCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", color: "hsl(38,28%,28%)", lineHeight: 1.7 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+
+          {/* Documents & Services We Handle (accordion-style numbered list) */}
           {service.documents && service.documents.length > 0 && (
             <section>
               <div style={{ width: "2rem", height: "1px", background: GOLD, marginBottom: "1.2rem" }} />
@@ -145,23 +170,48 @@ export default async function ServiceDetailPage({ params }: Props) {
             </section>
           )}
 
-          {/* What we do */}
-          <section>
-            <div style={{ width: "2rem", height: "1px", background: GOLD, marginBottom: "1.2rem" }} />
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: INK, marginBottom: "1.2rem" }}>
-              How We Can Help You
-            </h2>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
-              {service.whatWeDo.map((item, i) => (
-                <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
-                  <CheckCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
-                  <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", color: "hsl(38,28%,28%)", lineHeight: 1.7 }}>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* How We Can Help (whatWeDo — only shown when not empty) */}
+          {service.whatWeDo && service.whatWeDo.length > 0 && (
+            <section>
+              <div style={{ width: "2rem", height: "1px", background: GOLD, marginBottom: "1.2rem" }} />
+              <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: INK, marginBottom: "1.2rem" }}>
+                How We Can Help You
+              </h2>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "0.65rem" }}>
+                {service.whatWeDo.map((item, i) => (
+                  <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
+                    <CheckCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", color: "hsl(38,28%,28%)", lineHeight: 1.7 }}>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
 
-          {/* Process */}
+          {/* When Title Due Diligence Is Essential (Title Search only) */}
+          {service.whenEssential && service.whenEssential.length > 0 && (
+            <section>
+              <div style={{ width: "2rem", height: "1px", background: GOLD, marginBottom: "1.2rem" }} />
+              <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: INK, marginBottom: "1.2rem" }}>
+                When Title Due Diligence Becomes Essential
+              </h2>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "0.75rem" }} className="max-sm:grid-cols-1">
+                {service.whenEssential.map((item, i) => (
+                  <div key={i} style={{
+                    display: "flex", alignItems: "flex-start", gap: "0.7rem",
+                    padding: "0.9rem 1rem",
+                    background: "#fff",
+                    border: `1px solid ${BORDER}`,
+                  }}>
+                    <span style={{ width: 5, height: 5, borderRadius: "50%", background: GOLD, flexShrink: 0, marginTop: 7 }} />
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.8rem", color: "hsl(38,28%,28%)", lineHeight: 1.65 }}>{item}</span>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Our Process */}
           <section>
             <div style={{ width: "2rem", height: "1px", background: GOLD, marginBottom: "1.2rem" }} />
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: INK, marginBottom: "1.5rem" }}>
@@ -195,28 +245,114 @@ export default async function ServiceDetailPage({ params }: Props) {
             </div>
           </section>
 
-          {/* Documents required */}
-          <section style={{ background: CREAM2, padding: "1.8rem 2rem", border: `1px solid ${BORDER}` }}>
-            <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", marginBottom: "1rem" }}>
-              <FileText style={{ width: 18, height: 18, color: GOLD }} />
-              <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem", fontWeight: 400, color: INK }}>
-                Documents You Need to Bring
-              </h2>
-            </div>
-            <ul style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
-              {service.docsRequired.map((doc, i) => (
-                <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem" }}>
-                  <span style={{ width: 5, height: 5, borderRadius: "50%", background: GOLD, flexShrink: 0, marginTop: 6 }} />
-                  <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.78rem", color: "hsl(38,28%,32%)", lineHeight: 1.7 }}>{doc}</span>
-                </li>
-              ))}
-            </ul>
-          </section>
+          {/* Documents Required — GROUPED version */}
+          {hasGroupedDocs && (
+            <section>
+              <div style={{ width: "2rem", height: "1px", background: GOLD, marginBottom: "1.2rem" }} />
+              <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", marginBottom: "1.5rem" }}>
+                <FileText style={{ width: 18, height: 18, color: GOLD }} />
+                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.5rem", fontWeight: 400, color: INK }}>
+                  Documents Required
+                </h2>
+              </div>
+              <div style={{ display: "flex", flexDirection: "column", gap: "1.2rem" }}>
+                {service.docsGroups!.map((group, gi) => (
+                  <div key={gi} style={{ border: `1px solid ${BORDER}`, overflow: "hidden" }}>
+                    {/* Group header */}
+                    <div style={{
+                      background: INK,
+                      padding: "0.7rem 1.2rem",
+                      display: "flex", alignItems: "center", gap: "0.6rem",
+                    }}>
+                      <span style={{ width: "1.4rem", height: "1px", background: GOLD, flexShrink: 0 }} />
+                      <span style={{
+                        fontFamily: "'Jost', sans-serif",
+                        fontSize: "0.6rem", letterSpacing: "0.18em",
+                        textTransform: "uppercase", color: GOLD,
+                      }}>
+                        {group.groupTitle}
+                      </span>
+                    </div>
+                    {/* Group items */}
+                    <div style={{ background: "#fff", padding: "0.9rem 1.2rem" }}>
+                      <ul style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                        {group.items.map((doc, di) => (
+                          <li key={di} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem" }}>
+                            <span style={{ width: 5, height: 5, borderRadius: "50%", background: GOLD, flexShrink: 0, marginTop: 6 }} />
+                            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.78rem", color: "hsl(38,28%,32%)", lineHeight: 1.7 }}>{doc}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              {/* Docs note */}
+              {service.docsNote && (
+                <div style={{
+                  marginTop: "1.2rem",
+                  display: "flex", gap: "0.75rem", alignItems: "flex-start",
+                  padding: "1rem 1.2rem",
+                  background: CREAM2,
+                  border: `1px solid ${BORDER}`,
+                  borderLeft: `2px solid ${GOLD}`,
+                }}>
+                  <AlertCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
+                  <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.77rem", color: "hsl(38,28%,32%)", lineHeight: 1.75, fontStyle: "italic" }}>
+                    {service.docsNote}
+                  </p>
+                </div>
+              )}
+            </section>
+          )}
+
+          {/* Documents Required — FLAT version (legacy services) */}
+          {!hasGroupedDocs && hasFlatDocs && (
+            <section style={{ background: CREAM2, padding: "1.8rem 2rem", border: `1px solid ${BORDER}` }}>
+              <div style={{ display: "flex", gap: "0.75rem", alignItems: "center", marginBottom: "1rem" }}>
+                <FileText style={{ width: 18, height: 18, color: GOLD }} />
+                <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "1.25rem", fontWeight: 400, color: INK }}>
+                  Documents Required
+                </h2>
+              </div>
+              <ul style={{ display: "flex", flexDirection: "column", gap: "0.55rem" }}>
+                {service.docsRequired!.map((doc, i) => (
+                  <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem" }}>
+                    <span style={{ width: 5, height: 5, borderRadius: "50%", background: GOLD, flexShrink: 0, marginTop: 6 }} />
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.78rem", color: "hsl(38,28%,32%)", lineHeight: 1.7 }}>{doc}</span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          )}
+
+          {/* Closing note (Title Search only) */}
+          {service.closingNote && (
+            <section>
+              <div style={{
+                padding: "1.4rem 1.6rem",
+                background: INK,
+                border: `1px solid rgba(184,149,80,0.2)`,
+                borderLeft: `2px solid ${GOLD}`,
+              }}>
+                <p style={{
+                  fontFamily: "'Cormorant Garamond', serif",
+                  fontSize: "1.05rem", fontStyle: "italic",
+                  color: "hsl(40,28%,82%)", lineHeight: 1.7,
+                }}>
+                  {service.closingNote}
+                </p>
+              </div>
+            </section>
+          )}
 
         </div>
 
-        {/* Right sidebar */}
-        <aside style={{ display: "flex", flexDirection: "column", gap: "1.2rem", position: "sticky", top: "6rem" }} className="max-lg:mt-8">
+        {/* ── RIGHT SIDEBAR ─────────────────────────────────────────────── */}
+        <aside
+          style={{ display: "flex", flexDirection: "column", gap: "1.2rem", position: "sticky", top: "6rem" }}
+          className="max-lg:mt-8"
+        >
 
           {/* Timeline */}
           <div style={{ background: INK, padding: "1.6rem", border: `1px solid rgba(184,149,80,0.2)` }}>
@@ -261,7 +397,7 @@ export default async function ServiceDetailPage({ params }: Props) {
         </aside>
       </div>
 
-      {/* Bottom CTA */}
+      {/* ── BOTTOM CTA ───────────────────────────────────────────────────── */}
       <section style={{ background: INK2, padding: "3.5rem 0", textAlign: "center", borderTop: `1px solid rgba(184,149,80,0.1)` }}>
         <div className="max-w-6xl mx-auto px-5 sm:px-8">
           <div style={{ width: "2rem", height: "1px", background: GOLD, margin: "0 auto 1.4rem" }} />
