@@ -13,7 +13,7 @@ export type ServiceDetail = {
   docsRequired: string[];
 };
 
-export const services: ServiceDetail[] = [
+export const services = [
   {
     slug: "title-search-due-diligence",
     title: "Title Search & Due Diligence",
