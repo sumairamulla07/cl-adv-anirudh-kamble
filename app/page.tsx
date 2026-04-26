@@ -19,7 +19,7 @@ const INK3   = "hsl(35,20%,26%)";
 const CREAM  = "hsl(40,33%,96%)";
 const CREAM2 = "hsl(40,28%,92%)";
 const GOLD   = "hsl(38,52%,51%)";
-const MUTED  = "hsl(35,18%,48%)";
+const MUTED  = "hsl(35,18%,28%)";
 const BORDER = "rgba(184,149,80,0.18)";
 
 const stats = [
@@ -147,10 +147,10 @@ export default function HomePage() {
               <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.7rem, 3vw, 2.6rem)", fontWeight: 300, color: INK, lineHeight: 1.1, marginBottom: "1rem" }}>
                 Trusted Legal Expertise<br />in Property Law
               </h2>
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.83rem", lineHeight: 1.9, color: "hsl(38,28%,32%)", marginBottom: "0.9rem" }}>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.92rem", lineHeight: 1.9, color: "hsl(38,22%,16%)", marginBottom: "0.9rem" }}>
                 With over 24 years of legal practice, we are engaged in property and commercial transaction work in Pune and Pimpri Chinchwad, including title analysis, documentation, and contract structuring, with a consistent focus on clarity and risk management.
               </p>
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.83rem", lineHeight: 1.9, color: "hsl(38,28%,32%)", marginBottom: "1.8rem" }}>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.92rem", lineHeight: 1.9, color: "hsl(38,22%,16%)", marginBottom: "1.8rem" }}>
                 Supported by an academic background in Economics and Law — B.A. (Economics) from Nowrosjee Wadia College and LL.B., D.T.L., D.H.L. from Symbiosis Law College and IALS, Pune — the practice reflects a disciplined approach grounded in both legal principles and practical application.
               </p>
 
@@ -181,7 +181,7 @@ export default function HomePage() {
                         <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.67rem", fontWeight: 600, letterSpacing: "0.05em", textTransform: "uppercase", color: INK, marginBottom: "0.25rem" }}>
                           {area.label}
                         </div>
-                        <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.72rem", color: MUTED, lineHeight: 1.75 }}>
+                        <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.80rem", color: MUTED, lineHeight: 1.75 }}>
                           {area.desc}
                         </div>
                       </div>
@@ -227,7 +227,7 @@ export default function HomePage() {
               <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem, 2.5vw, 2.4rem)", fontWeight: 300, color: INK, marginBottom: "1rem", lineHeight: 1.15 }}>
                 Preventive, Client-Focused Legal Practice
               </h2>
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", lineHeight: 1.85, color: MUTED, marginBottom: "1.6rem" }}>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.9rem", lineHeight: 1.85, color: MUTED, marginBottom: "1.6rem" }}>
                 The practice follows a preventive approach — aimed at avoiding disputes before they arise through meticulous documentation and thorough scrutiny.
               </p>
               <blockquote style={{ borderLeft: `2px solid ${GOLD}`, paddingLeft: "1rem", fontFamily: "'Cormorant Garamond', serif", fontSize: "1.05rem", fontStyle: "italic", color: "hsl(41,27%,20%)", lineHeight: 1.65 }}>
@@ -263,7 +263,7 @@ export default function HomePage() {
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.7rem, 3vw, 2.8rem)", fontWeight: 300, color: CREAM, marginBottom: "0.9rem" }}>
               Your Reliable Legal Partner
             </h2>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", lineHeight: 1.85, color: MUTED, maxWidth: 460, margin: "0 auto 2rem" }}>
+            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.9rem", lineHeight: 1.85, color: MUTED, maxWidth: 460, margin: "0 auto 2rem" }}>
               With 24 years of experience in property documentation and registration, Advocate Anirudh Kamble offers dependable legal support from initial drafting to final execution.
             </p>
             <div style={{ display: "flex", gap: "0.85rem", justifyContent: "center", flexWrap: "wrap" }}>
