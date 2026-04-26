@@ -19,7 +19,7 @@ const INK3   = "hsl(35,20%,26%)";
 const CREAM  = "hsl(40,33%,96%)";
 const CREAM2 = "hsl(40,28%,92%)";
 const GOLD   = "hsl(38,52%,51%)";
-const MUTED  = "hsl(35,18%,28%)";
+const MUTED  = "hsl(0,0%,20%)";
 const BORDER = "rgba(184,149,80,0.18)";
 
 const stats = [
@@ -147,10 +147,10 @@ export default function HomePage() {
               <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.7rem, 3vw, 2.6rem)", fontWeight: 300, color: INK, lineHeight: 1.1, marginBottom: "1rem" }}>
                 Trusted Legal Expertise<br />in Property Law
               </h2>
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.92rem", lineHeight: 1.9, color: "hsl(38,22%,16%)", marginBottom: "0.9rem" }}>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.92rem", lineHeight: 1.9, color: "hsl(0,0%,8%)", marginBottom: "0.9rem" }}>
                 With over 24 years of legal practice, we are engaged in property and commercial transaction work in Pune and Pimpri Chinchwad, including title analysis, documentation, and contract structuring, with a consistent focus on clarity and risk management.
               </p>
-              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.92rem", lineHeight: 1.9, color: "hsl(38,22%,16%)", marginBottom: "1.8rem" }}>
+              <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.92rem", lineHeight: 1.9, color: "hsl(0,0%,8%)", marginBottom: "1.8rem" }}>
                 Supported by an academic background in Economics and Law — B.A. (Economics) from Nowrosjee Wadia College and LL.B., D.T.L., D.H.L. from Symbiosis Law College and IALS, Pune — the practice reflects a disciplined approach grounded in both legal principles and practical application.
               </p>
 
