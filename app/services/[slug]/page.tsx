@@ -31,7 +31,7 @@ const GOLD  = "hsl(38,52%,51%)";
 const MUTED = "hsl(35,18%,36%)";
 const BORDER = "rgba(184,149,80,0.18)";
 // Readable body text — dark enough for comfort on cream background
-const BODY  = "hsl(38,22%,18%)";
+const BODY  = "hsl(0,0%,8%)";
 
 export default async function ServiceDetailPage({ params }: Props) {
   const { slug } = await params;
@@ -122,7 +122,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 {sec.items.map((item, ii) => (
                   <li key={ii} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                     <CheckCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
-                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.88rem", color: BODY, lineHeight: 1.75 }}>{item}</span>
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.88rem", color: BODY, fontWeight: 400, lineHeight: 1.75 }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -161,7 +161,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.8rem", fontWeight: 500, color: INK, marginBottom: "0.3rem" }}>
                           {doc.name}
                         </div>
-                        <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", color: BODY, lineHeight: 1.8 }}>
+                        <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", color: BODY, fontWeight: 400, lineHeight: 1.8 }}>
                           {doc.desc}
                         </div>
                       </div>
@@ -183,7 +183,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 {service.whatWeDo.map((item, i) => (
                   <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem" }}>
                     <CheckCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
-                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.88rem", color: BODY, lineHeight: 1.75 }}>{item}</span>
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.88rem", color: BODY, fontWeight: 400, lineHeight: 1.75 }}>{item}</span>
                   </li>
                 ))}
               </ul>
@@ -206,7 +206,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     border: `1px solid ${BORDER}`,
                   }}>
                     <span style={{ width: 5, height: 5, borderRadius: "50%", background: GOLD, flexShrink: 0, marginTop: 7 }} />
-                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.86rem", color: BODY, lineHeight: 1.7 }}>{item}</span>
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.86rem", color: BODY, fontWeight: 400, lineHeight: 1.7 }}>{item}</span>
                   </div>
                 ))}
               </div>
@@ -238,7 +238,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                     <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", fontWeight: 500, color: INK, marginBottom: "0.3rem" }}>
                       {step.title}
                     </div>
-                    <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.85rem", color: BODY, lineHeight: 1.8 }}>
+                    <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.85rem", color: BODY, fontWeight: 400, lineHeight: 1.8 }}>
                       {step.desc}
                     </div>
                   </div>
@@ -281,7 +281,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                         {group.items.map((doc, di) => (
                           <li key={di} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem" }}>
                             <span style={{ width: 5, height: 5, borderRadius: "50%", background: GOLD, flexShrink: 0, marginTop: 6 }} />
-                            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.85rem", color: BODY, lineHeight: 1.75 }}>{doc}</span>
+                            <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.85rem", color: BODY, fontWeight: 400, lineHeight: 1.75 }}>{doc}</span>
                           </li>
                         ))}
                       </ul>
@@ -300,7 +300,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                   borderLeft: `2px solid ${GOLD}`,
                 }}>
                   <AlertCircle style={{ width: 15, height: 15, color: GOLD, flexShrink: 0, marginTop: 2 }} />
-                  <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", color: BODY, lineHeight: 1.8, fontStyle: "italic" }}>
+                  <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.82rem", color: BODY, fontWeight: 400, lineHeight: 1.8, fontStyle: "italic" }}>
                     {service.docsNote}
                   </p>
                 </div>
@@ -321,7 +321,7 @@ export default async function ServiceDetailPage({ params }: Props) {
                 {service.docsRequired!.map((doc, i) => (
                   <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.65rem" }}>
                     <span style={{ width: 5, height: 5, borderRadius: "50%", background: GOLD, flexShrink: 0, marginTop: 6 }} />
-                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.85rem", color: BODY, lineHeight: 1.75 }}>{doc}</span>
+                    <span style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.85rem", color: BODY, fontWeight: 400, lineHeight: 1.75 }}>{doc}</span>
                   </li>
                 ))}
               </ul>
