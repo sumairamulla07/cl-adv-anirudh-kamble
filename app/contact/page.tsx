@@ -5,11 +5,11 @@ import ContactForm from "@/components/ContactForm";
 export const metadata: Metadata = {
   title: "Contact Advocate Anirudh Kamble – Free Legal Consultation Pune",
   description:
-    "Contact Advocate Anirudh Kamble for a free property law consultation in Pune. Call 9922836682, WhatsApp, or email adv.anirudhkamble@gmail.com. Office hours Mon–Sat 10AM–7PM.",
+    "Contact Advocate Anirudh Kamble for a free property law consultation in Pune. Call 9922836682, WhatsApp, or email advocateanirudhk@gmail.com. Office hours Mon–Sat 10AM–8PM.",
   alternates: { canonical: "https://advanirudhkamble.com/contact" },
   openGraph: {
     title: "Contact – Appointments | Adv. Anirudh Kamble Property Lawyer Pune",
-    description: "Get in touch with Advocate Anirudh Kamble for expert property law advice. Schedule an appointment.",
+    description: "Get in touch with Advocate Anirudh Kamble for property law advice. Schedule an appointment.",
     url: "https://advanirudhkamble.com/contact",
   },
 };
@@ -22,7 +22,7 @@ const contactItems = [
     value: "Chat on WhatsApp",
     href: "https://wa.me/919922836682?text=Hello%20Advocate%20Kamble%2C%20I%20need%20legal%20assistance",
   },
-  { icon: Mail, label: "Email", value: "adv.anirudhkamble@gmail.com", href: "mailto:adv.anirudhkamble@gmail.com" },
+  { icon: Mail, label: "Email", value: "advocateanirudhk@gmail.com", href: "mailto:advocateanirudhk@gmail.com" },
   { icon: MapPin, label: "Office", value: "Ground Floor, B Wing, Jai Ganesh Vision, B-63, Shubhashri Residency, Ganga Nagar, Akurdi, Pune – 411035" },
 ];
 
@@ -33,7 +33,7 @@ export default function ContactPage() {
         <div className="container-narrow mx-auto px-4">
           <h1 className="font-display text-4xl sm:text-5xl font-bold text-gold-light mb-4">Contact Us</h1>
           <p className="text-gold-light/70 text-lg max-w-2xl mx-auto">
-            Get expert legal advice. Reach out to schedule an appointment today.
+            Get legal advice. Reach out to schedule an appointment today.
           </p>
         </div>
       </section>
@@ -72,7 +72,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <div className="text-sm text-muted-foreground">Working Hours</div>
-                  <p className="text-foreground font-medium">Mon – Sat: 10:30 AM – 8:00 PM</p>
+                  <p className="text-foreground font-medium">Mon – Sat: 10:00 AM – 8:00 PM</p>
                   <p className="text-muted-foreground text-sm">All Sundays OFF</p>
                 </div>
               </div>
