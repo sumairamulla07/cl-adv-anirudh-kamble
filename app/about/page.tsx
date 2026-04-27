@@ -6,9 +6,9 @@ import AnimatedSection from "@/components/AnimatedSection";
 import HeroAnimated from "@/components/HeroAnimated";
 
 export const metadata: Metadata = {
-  title: "About Advocate Anirudh Kamble – 24+ Years Property Law Experience",
+  title: "About Advocate Anirudh Kamble – 24+ Years Property Law Practice",
   description:
-    "Advocate Anirudh Kamble – Pune's trusted property lawyer with 24+ years of experience. LL.B from Symbiosis Law College, DTL & DHL qualifications, specializing in property documentation, registration, and real estate law across Pune and Pimpri Chinchwad.",
+    "Advocate Anirudh Kamble – Property lawyer in Pune with 24+ years of practice. LL.B from Symbiosis Law College, DTL & DHL qualifications, specializing in property documentation, registration, and real estate law across Pune and Pimpri Chinchwad.",
   alternates: { canonical: "https://advanirudhkamble.com/about" },
   openGraph: {
     title: "About Advocate Anirudh Kamble – Property Lawyer Pune",
@@ -28,23 +28,16 @@ const milestones = [
   { year: "2001", text: "Enrolled as Advocate – beginning of dedicated legal practice" },
   { year: "2005", text: "Established independent practice specializing in property documentation & registration" },
   { year: "2010", text: "Expanded practice to cover Deemed Conveyance for Housing Societies" },
-  { year: "2015", text: "Recognized as a trusted legal partner for property documentation across Pune & Pimpri Chinchwad" },
-  { year: "2024", text: "24+ years of trusted property law practice — and counting" },
-];
-
-const values = [
-  { icon: Scale, title: "Integrity", desc: "Honest, transparent legal practice with no hidden fees." },
-  { icon: Award, title: "24+ Years Expertise", desc: "Specialized in property documentation and registration across Pune." },
-  { icon: Users, title: "Client First", desc: "Personalized attention to every case, big or small." },
-  { icon: BookOpen, title: "Preventive Approach", desc: "Focused on avoiding disputes before they arise through meticulous drafting." },
+  { year: "2015", text: "Established as a reliable legal practice for property documentation across Pune & Pimpri Chinchwad" },
+  { year: "2024", text: "24+ years of dedicated property law practice — and continuing" },
 ];
 
 const approach = [
-  "Detailed scrutiny of ownership and title chain",
-  "Accurate stamp duty and registration guidance",
-  "Careful drafting to safeguard client interests",
-  "End-to-end assistance before the Sub-Registrar Office",
-  "Clear and practical legal advice prior to execution",
+  "Scrutiny of ownership records and chain of title",
+  "Guidance on stamp duty and registration requirements",
+  "Drafting of property-related documents and agreements",
+  "Assistance in procedures before the Sub-Registrar Office",
+  "Advisory on legal aspects prior to execution of documents",
 ];
 
 export default function AboutPage() {
@@ -112,35 +105,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Practice Approach — replaces "Why Choose Us" + old "Preventive Approach" */}
       <section className="section-padding bg-muted">
-        <div className="container-narrow mx-auto">
-          <AnimatedSection className="text-center mb-12">
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">Why Choose Us</h2>
-          </AnimatedSection>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {values.map((v, i) => (
-              <AnimatedSection key={v.title} delay={i * 0.1} className="card-elegant text-center">
-                <v.icon className="w-10 h-10 text-gold mx-auto mb-3" />
-                <h3 className="font-display text-lg font-semibold text-foreground mb-2">{v.title}</h3>
-                <p className="text-muted-foreground text-sm">{v.desc}</p>
-              </AnimatedSection>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Preventive Approach */}
-      <section className="section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
           <AnimatedSection className="text-center mb-10">
-            <span className="text-gold font-semibold text-sm tracking-wider uppercase">Our Philosophy</span>
-            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2">A Preventive, Client-Focused Approach</h2>
-            <p className="text-muted-foreground mt-3">
-              The practice follows a preventive legal approach — aimed at avoiding disputes before they arise.
+            <span className="text-gold font-semibold text-sm tracking-wider uppercase">Practice Approach</span>
+            <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground mt-2">
+              Preventive Legal Approach
+            </h2>
+            <p className="text-muted-foreground mt-3 max-w-2xl mx-auto">
+              The practice follows a preventive approach in property matters, with emphasis on documentation and due diligence to reduce the likelihood of disputes.
             </p>
           </AnimatedSection>
-          <AnimatedSection className="card-elegant">
+
+          <AnimatedSection className="card-elegant mb-6">
+            <h3 className="font-display text-lg font-semibold text-foreground mb-4">Scope of Work</h3>
             <ul className="space-y-3">
               {approach.map((item, i) => (
                 <li key={i} className="flex items-start gap-3 text-foreground">
@@ -149,15 +128,19 @@ export default function AboutPage() {
                 </li>
               ))}
             </ul>
-            <p className="text-muted-foreground text-sm mt-5 leading-relaxed">
-              Where required, the practice also extends legal support in court matters related to property and contractual disputes, ensuring continuity and protection of client interests — while maintaining primary focus on strong documentation and preventive strategy.
+          </AnimatedSection>
+
+          <AnimatedSection className="card-elegant">
+            <h3 className="font-display text-lg font-semibold text-foreground mb-3">Additional Legal Work</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Where required, assistance is provided in matters relating to property disputes and contractual issues, including proceedings before courts and authorities.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
       {/* Timeline */}
-      <section className="section-padding bg-muted">
+      <section className="section-padding">
         <div className="container-narrow mx-auto max-w-3xl">
           <AnimatedSection className="text-center mb-12">
             <h2 className="font-display text-3xl sm:text-4xl font-bold text-foreground">Career Milestones</h2>
@@ -183,9 +166,9 @@ export default function AboutPage() {
       <section className="section-padding bg-navy-dark text-center">
         <div className="container-narrow mx-auto">
           <Scale className="w-12 h-12 text-gold mx-auto mb-4" />
-          <h2 className="font-display text-3xl sm:text-4xl font-bold text-gold-light mb-4">Your Reliable Legal Partner</h2>
+          <h2 className="font-display text-3xl sm:text-4xl font-bold text-gold-light mb-4">Legal Partner</h2>
           <p className="text-gold-light/70 text-lg mb-8 max-w-2xl mx-auto">
-            Whether you are buying, selling, drafting contracts, or regularizing property rights through deemed conveyance — professional legal guidance is essential. With 24 years of experience, Advocate Anirudh Kamble offers dependable legal support from initial drafting to final execution.
+            Whether you are buying, selling, drafting contracts, or regularizing property rights through deemed conveyance — professional legal guidance is essential. With 24 years of practice, Advocate Anirudh Kamble offers dependable legal support from initial drafting to final execution.
           </p>
           <Link href="/contact" className="btn-gold text-base px-8 py-4">
             Schedule an Appointment <ArrowRight className="w-5 h-5" />
