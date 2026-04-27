@@ -263,7 +263,7 @@ export default function HomePage() {
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.7rem, 3vw, 2.8rem)", fontWeight: 300, color: CREAM, marginBottom: "0.9rem" }}>
               Legal Partner
             </h2>
-            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.9rem", lineHeight: 1.85, color: MUTED, maxWidth: 460, margin: "0 auto 2rem" }}>
+            <p style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.9rem", lineHeight: 1.85, color: GOLD, maxWidth: 460, margin: "0 auto 2rem" }}>
               With 24 years of experience in property documentation and registration, Advocate Anirudh Kamble offers dependable legal support from initial drafting to final execution.
             </p>
             <div style={{ display: "flex", gap: "0.85rem", justifyContent: "center", flexWrap: "wrap" }}>
