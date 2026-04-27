@@ -27,16 +27,16 @@ export default function Footer() {
             </span>
           </div>
           <p style={{ fontSize: "0.8rem", lineHeight: "1.8", color: "hsl(35,18%,55%)" }}>
-            Pune&apos;s trusted property lawyer with 24+ years of experience in property documentation and registration across Pune and Pimpri Chinchwad.
+            Pune&apos;s property lawyer with 24+ years of experience in property documentation and registration across Pune and Pimpri Chinchwad.
           </p>
           <div className="mt-5 space-y-2" style={{ fontSize: "0.75rem", color: "hsl(35,18%,55%)" }}>
             <a href="tel:9922836682" className="flex items-center gap-2 hover:text-gold transition-colors" style={{ textDecoration: "none", color: "inherit" }}>
               <Phone className="w-3.5 h-3.5" style={{ color: "hsl(38,52%,51%)" }} />
               9922836682
             </a>
-            <a href="mailto:adv.anirudhkamble@gmail.com" className="flex items-center gap-2 hover:text-gold transition-colors" style={{ textDecoration: "none", color: "inherit" }}>
+            <a href="mailto:advocateanirudhk@gmail.com" className="flex items-center gap-2 hover:text-gold transition-colors" style={{ textDecoration: "none", color: "inherit" }}>
               <Mail className="w-3.5 h-3.5" style={{ color: "hsl(38,52%,51%)" }} />
-              adv.anirudhkamble@gmail.com
+              advocateanirudhk@gmail.com
             </a>
             <div className="flex items-start gap-2">
               <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "hsl(38,52%,51%)" }} />
