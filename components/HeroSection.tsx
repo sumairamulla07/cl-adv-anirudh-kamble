@@ -53,7 +53,7 @@ export default function HeroSection() {
             textTransform: "uppercase",
             color: "hsl(38,52%,51%)",
           }}>
-            Trusted Legal Expertise Since 2001
+            Legal Practice Since 2001
           </span>
         </motion.div>
 
@@ -76,7 +76,7 @@ export default function HeroSection() {
             Legal Documentation
           </em>
           <br />
-          You Can Rely On
+          
         </motion.h1>
 
         {/* Subtext */}
