@@ -80,7 +80,7 @@ export default function HomePage() {
               className="max-sm:[&:nth-child(2)]:border-r-0 max-sm:[&:nth-child(3)]:border-r-0"
             >
               <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "clamp(1.6rem,4vw,2rem)", fontWeight: 300, color: GOLD, lineHeight: 1 }}>{s.value}</div>
-              <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: MUTED, marginTop: "0.3rem", lineHeight: 1.5 }}>{s.label}</div>
+              <div style={{ fontFamily: "'Jost', sans-serif", fontSize: "0.5rem", letterSpacing: "0.14em", textTransform: "uppercase", color: "#ffffff", marginTop: "0.3rem", lineHeight: 1.5 }}>{s.label}</div>
             </div>
           ))}
         </div>
