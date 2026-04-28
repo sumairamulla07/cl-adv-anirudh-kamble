@@ -25,7 +25,7 @@ export default function PrivacyPage() {
           <h2 className="font-display text-2xl font-semibold mt-8 mb-3">Data Security</h2>
           <p>We take reasonable precautions to protect your information. However, no method of transmission over the internet is 100% secure.</p>
           <h2 className="font-display text-2xl font-semibold mt-8 mb-3">Contact</h2>
-          <p>For any privacy-related queries, please contact us at <a href="mailto:adv.anirudhkamble@gmail.com" className="text-gold hover:underline">adv.anirudhkamble@gmail.com</a>.</p>
+          <p>For any privacy-related queries, please contact us at <a href="mailto:advocateanirudhk@gmail.com" className="text-gold hover:underline">adv.anirudhkamble@gmail.com</a>.</p>
         </div>
         <div className="mt-10">
           <Link href="/" className="btn-gold">Back to Home</Link>
