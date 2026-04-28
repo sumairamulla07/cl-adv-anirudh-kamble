@@ -25,7 +25,7 @@ export default function TermsPage() {
           <h2 className="font-display text-2xl font-semibold mt-8 mb-3">Intellectual Property</h2>
           <p>All content, logos, and materials on this website are the property of Advocate Anirudh Kamble and may not be reproduced without permission.</p>
           <h2 className="font-display text-2xl font-semibold mt-8 mb-3">Contact</h2>
-          <p>For any questions, please reach us at <a href="mailto:adv.anirudhkamble@gmail.com" className="text-gold hover:underline">adv.anirudhkamble@gmail.com</a>.</p>
+          <p>For any questions, please reach us at <a href="mailto:advocateanirudhk@gmail.com" className="text-gold hover:underline">adv.anirudhkamble@gmail.com</a>.</p>
         </div>
         <div className="mt-10">
           <Link href="/" className="btn-gold">Back to Home</Link>
