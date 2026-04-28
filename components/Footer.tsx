@@ -40,7 +40,7 @@ export default function Footer() {
             </a>
             <div className="flex items-start gap-2">
               <MapPin className="w-3.5 h-3.5 mt-0.5 flex-shrink-0" style={{ color: "hsl(38,52%,51%)" }} />
-              <span>Ganga Nagar, Akurdi, Pune – 411035</span>
+              <span>Ground Floor, B Wing, Jai Ganesh Vision, B-63, Shubhashri Residency, Ganga Nagar, Akurdi, Pune – 411035</span>
             </div>
           </div>
         </div>
