@@ -46,11 +46,11 @@ export const metadata: Metadata = {
     ],
   },
   title: {
-    default: "Advocate Anirudh Kamble – Pune's Trusted Real Estate Lawyer & Notary",
+    default: "Advocate Anirudh Kamble – Pune's Real Estate Lawyer & Notary",
     template: "%s | Adv. Anirudh Kamble – Property Lawyer Pune",
   },
   description:
-    "Advocate Anirudh Kamble – Pune's trusted real estate lawyer and notary with 24+ years of experience. Expert in property due diligence, title verification, sale deed drafting, and RERA compliance. Call 9922836682.",
+    "Advocate Anirudh Kamble – Pune's real estate lawyer and notary with 24+ years of experience. Expert in property due diligence, title verification, sale deed drafting, and RERA compliance. Call 9922836682.",
   keywords: [
     "property lawyer Pune",
     "real estate lawyer Pune",
