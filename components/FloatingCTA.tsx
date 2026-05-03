@@ -6,7 +6,7 @@ export default function FloatingCTA() {
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col gap-3">
       <a
-        href="https://wa.me/919922836682?text=Hello%20Advocate%20Kamble%2C%20I%20need%20legal%20assistance"
+        href="https://wa.me/919922836682?text=Hello%20Advocate%20Anirudh%2C%20I%20need%20legal%20assistance"
         target="_blank"
         rel="noopener noreferrer"
         className="w-14 h-14 rounded-full bg-green-500 flex items-center justify-center shadow-lg hover:scale-110 transition-transform"
